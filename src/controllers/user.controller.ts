@@ -1,7 +1,12 @@
 import { Request, Response } from "express";
 
 const signupControllers = {
-  signup: (req: Request, res: Response) => {
+  signup: async (req: Request, res: Response) => {
+    console.log("test");
+    res.send("true");
+  },
+
+  login: async (req: Request, res: Response) => {
     console.log("test");
     res.send("true");
   },
