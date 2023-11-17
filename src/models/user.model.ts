@@ -11,7 +11,7 @@ const userSchema = new Schema<UserInterface>(
     names: { type: String, required: true, trim: true },
     email: {
       type: String,
-      required: true,
+      required: false,
       unique: true,
       trim: true,
       validate: {
@@ -21,7 +21,7 @@ const userSchema = new Schema<UserInterface>(
     },
     phone: {
       type: String,
-      required: true,
+      required: false,
       trim: true,
       validate: {
         validator: validatePhoneNumber,
