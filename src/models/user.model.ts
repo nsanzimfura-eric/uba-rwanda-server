@@ -1,12 +1,33 @@
 import mongoose, { Model, Schema, model } from "mongoose";
 import { UserInterface } from "#/interfaces/user.interface";
 import { USER_ROLES } from "#/utils/roles.utils";
+import {
+  validatePhoneNumber,
+  validateEmail,
+} from "#/validators/userDetails.validator";
 
 const userSchema = new Schema<UserInterface>(
   {
     names: { type: String, required: true, trim: true },
-    email: { type: String, required: true, unique: true, trim: true },
-    phone: { type: String, required: true, trim: true },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+      validate: {
+        validator: validateEmail,
+        message: (props) => `${props.value} is not a valid Email!`,
+      },
+    },
+    phone: {
+      type: String,
+      required: true,
+      trim: true,
+      validate: {
+        validator: validatePhoneNumber,
+        message: (props) => `${props.value} is not a valid phone number!`,
+      },
+    },
     password: { type: String, required: true },
     online: { type: Boolean, required: true, default: false },
     role: {

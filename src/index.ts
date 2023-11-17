@@ -14,11 +14,11 @@ app.use(express.urlencoded({ extended: false }));
 app.get("/", async (req, res) => {
   res
     .status(200)
-    .send("Welcome to the Uber App Home! Head to /api/auth to register");
+    .send("Welcome to the Uber App Home! Head to /api/auth/signup to register");
 });
 
 app.use("/api", router);
 
 app.listen(PORT, () => {
-  console.log("app is listening oin the port" + PORT);
+  console.log("app is listening oin the port: " + PORT);
 });
