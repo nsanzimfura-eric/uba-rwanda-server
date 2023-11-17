@@ -1,0 +1,30 @@
+{
+  "name": "uba-api",
+  "version": "1.0.0",
+  "description": "UBA/UBER is a platform for requesting and riding with drivers, driving and delivering with cars, and managing business travel and meals. Learn how to use the Uber/uba app, the Driver app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsnd --respawn --pretty --transpile-only ./src/index.ts"
+  },
+  "keywords": [
+    "uba Rwanda",
+    "UBA",
+    "Uber",
+    "Uber Rwanda",
+    "transport",
+    "app",
+    "driving app"
+  ],
+  "author": "Nsanzimfura",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "typescript": "^5.2.2",
+    "@types/node": "^20.9.0",
+    "ts-node-dev": "^2.0.0"
+  }
+}
