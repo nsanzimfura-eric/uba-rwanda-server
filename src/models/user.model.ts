@@ -4,6 +4,7 @@ import { USER_ROLES } from "#/utils/roles.utils";
 import {
   validatePhoneNumber,
   validateEmail,
+  validatePassword,
 } from "#/validators/userDetails.validator";
 
 const userSchema = new Schema<UserInterface>(
@@ -28,7 +29,15 @@ const userSchema = new Schema<UserInterface>(
         message: (props) => `${props.value} is not a valid phone number!`,
       },
     },
-    password: { type: String, required: true },
+    password: {
+      type: String,
+      required: true,
+      validate: {
+        validator: validatePassword,
+        message: () =>
+          `Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.`,
+      },
+    },
     online: { type: Boolean, required: true, default: false },
     role: {
       type: String,

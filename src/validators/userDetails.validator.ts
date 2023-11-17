@@ -9,4 +9,10 @@ const validateEmail = (email: string) => {
   return emailRegex.test(email);
 };
 
-export { validatePhoneNumber, validateEmail };
+const validatePassword = (password: string) => {
+  const strongPasswordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  return strongPasswordRegex.test(password);
+};
+
+export { validatePhoneNumber, validateEmail, validatePassword };
